@@ -23,17 +23,47 @@ const socialLinks = [
 export const Contact = () => {
   const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      toast({
-        title: "Message sent ✨",
-        description: "Thanks for reaching out — I'll get back to you shortly.",
+    
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/9c2f7ecb923316d23d61c4fcd205f963", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          subject: data.subject,
+          message: data.message,
+          _subject: `New Portfolio Message: ${data.subject}`
+        })
       });
-      (e.target as HTMLFormElement).reset();
-    }, 900);
+
+      if (response.ok) {
+        toast({
+          title: "Message sent ✨",
+          description: "Thanks for reaching out — I'll get back to you shortly.",
+        });
+        (e.target as HTMLFormElement).reset();
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      toast({
+        title: "Error ❌",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive" // Assuming you have a destructive variant in your toast component
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
