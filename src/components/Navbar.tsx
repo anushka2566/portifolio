@@ -35,8 +35,7 @@ export const Navbar = () => {
         style={scrolled ? undefined : { background: "transparent" }}
       >
         <a href="#home" className="font-display text-lg font-bold tracking-tight">
-          <span className="text-gradient">BMA</span>
-          <span className="text-foreground/60">.dev</span>
+          <span className="text-gradient">Anushka</span>
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">
