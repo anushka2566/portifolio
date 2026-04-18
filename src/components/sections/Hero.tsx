@@ -1,6 +1,6 @@
 import { ArrowRight, Download, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Typewriter } from "./Typewriter";
+import { Typewriter } from "../Typewriter";
 
 export const Hero = () => {
   return (
