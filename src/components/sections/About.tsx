@@ -65,7 +65,6 @@ export const About = () => {
                 </Reveal>
               ))}
             </div>
-          </div>
         </div>
       </div>
     </section>
