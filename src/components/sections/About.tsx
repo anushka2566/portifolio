@@ -1,6 +1,5 @@
 import { Code2, Brain, Rocket } from "lucide-react";
 import { Reveal } from "../Reveal";
-import portrait from "@/assets/anushka-portrait.jpg";
 
 const highlights = [
   {
@@ -23,28 +22,8 @@ const highlights = [
 export const About = () => {
   return (
     <section id="about" className="section-padding relative">
-      <div className="mx-auto max-w-6xl">
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
-          {/* Left — compact portrait */}
-          <Reveal className="lg:col-span-4">
-            <div className="relative mx-auto w-full max-w-[240px] lg:sticky lg:top-28">
-              <div className="absolute -inset-3 rounded-2xl bg-gradient-to-br from-primary/25 to-secondary/25 blur-2xl" />
-              <div className="glass-card relative aspect-square overflow-hidden p-1">
-                <div className="relative h-full w-full overflow-hidden rounded-[calc(var(--radius)-4px)]">
-                  <img
-                    src={portrait}
-                    alt="Bonam Maruthi Anushka — portrait"
-                    className="h-full w-full object-cover object-center"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
-                </div>
-              </div>
-            </div>
-          </Reveal>
-
-          {/* Right — content */}
-          <div className="lg:col-span-8">
+      <div className="mx-auto max-w-4xl">
+        <div>
             <Reveal>
               <div className="font-mono text-xs uppercase tracking-[0.3em] text-primary">
                 01 — about
