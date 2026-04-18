@@ -1,5 +1,6 @@
 import { Code2, Brain, Rocket } from "lucide-react";
 import { Reveal } from "../Reveal";
+import portrait from "@/assets/anushka-portrait.jpg";
 
 const highlights = [
   {
@@ -29,23 +30,14 @@ export const About = () => {
             <div className="relative">
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/30 to-secondary/30 blur-2xl" />
               <div className="glass-card relative aspect-[4/5] overflow-hidden p-1">
-                <div className="relative h-full w-full overflow-hidden rounded-[calc(var(--radius)-4px)] bg-gradient-to-br from-muted via-card to-muted">
-                  {/* Initials portrait placeholder */}
-                  <div className="absolute inset-0 grid place-items-center">
-                    <div className="text-center">
-                      <div className="font-display text-8xl font-bold text-gradient">BA</div>
-                      <div className="mt-2 font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                        cs · ai · ml
-                      </div>
-                    </div>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4 rounded-xl glass p-3">
-                    <div className="font-display text-sm font-semibold">B.Tech CSE</div>
-                    <div className="text-xs text-muted-foreground">
-                      Gayatri Vidya Parishad CoE for Women · 2024–2028
-                    </div>
-                  </div>
+                <div className="relative h-full w-full overflow-hidden rounded-[calc(var(--radius)-4px)]">
+                  <img
+                    src={portrait}
+                    alt="Bonam Maruthi Anushka — portrait"
+                    className="h-full w-full object-cover object-center"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/10 to-transparent" />
                 </div>
               </div>
             </div>
