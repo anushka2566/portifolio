@@ -24,12 +24,12 @@ export const About = () => {
   return (
     <section id="about" className="section-padding relative">
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
-          {/* Left — portrait card */}
-          <Reveal className="lg:col-span-2">
-            <div className="relative">
-              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/30 to-secondary/30 blur-2xl" />
-              <div className="glass-card relative aspect-[4/5] overflow-hidden p-1">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
+          {/* Left — compact portrait */}
+          <Reveal className="lg:col-span-4">
+            <div className="relative mx-auto w-full max-w-[240px] lg:sticky lg:top-28">
+              <div className="absolute -inset-3 rounded-2xl bg-gradient-to-br from-primary/25 to-secondary/25 blur-2xl" />
+              <div className="glass-card relative aspect-square overflow-hidden p-1">
                 <div className="relative h-full w-full overflow-hidden rounded-[calc(var(--radius)-4px)]">
                   <img
                     src={portrait}
@@ -37,14 +37,14 @@ export const About = () => {
                     className="h-full w-full object-cover object-center"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/10 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
                 </div>
               </div>
             </div>
           </Reveal>
 
           {/* Right — content */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-8">
             <Reveal>
               <div className="font-mono text-xs uppercase tracking-[0.3em] text-primary">
                 01 — about
